@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculadora de IMC</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Cálculo IMC</h1>
+        <div>
+            <p>
+                O índice de massa corporal ou IMC é uma medida internacional usada para calcular se uma pessoa está no peso ideal. Desenvolvido pelo polímata Lambert Quételet no fim do século XIX, trata-se de um método fácil e rápido para a avaliação do nível de gordura de cada pessoa, sendo, por isso, um preditor internacional de obesidade adotado pela Organização Mundial da Saúde (OMS).
+            </p>
+
+            <h2>Como Calcular</h2>
+            <hr>
+            <p>
+                O IMC é determinado pela divisão da massa do indivíduo pelo quadrado de sua altura, em que a massa está em quilogramas e a altura em metros.
+            </p>
+            <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/37e3a5dc568a7824d23d380955085ae9d38cc200" alt="fórmula do cálculo de IMC">
+
+        </div>
+
+        <div class="float">
+            <h1>Tabela IMC</h1>
+            <table class="table table-primary table-striped">
+                <thead class="table-dark"> 
+                    <tr>
+                        <th>Resultado</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Abaixo de 17</td>
+                        <td>Muito abaixo do peso</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 17 e 18,49</td>
+                        <td>Abaixo do peso</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 18,50 e 24,99</td>
+                        <td>Peso normal</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 25 e 29,99</td>
+                        <td>Acima do peso</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 30 e 34,99</td>
+                        <td>Obesidade I</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 35 e 39,99</td>
+                        <td>Obesidade II (severa)</td>
+                    </tr>
+                    <tr>
+                        <td>Acima de 40</td>
+                        <td>Obesidade III (mórbida)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <legend>Gráfico de Resultado IMC</legend>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Body_mass_index_chart.svg/400px-Body_mass_index_chart.svg.png" alt="Gráfico de resultado imc">
+        </div>
+
+        <div class="float">
+            <div class="float=form">
+            <form action="" class="form">
+            <div class="mb-2">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" id="nome" class="form-control">
+            </div>
+
+            <div class="mb-2">
+            <label for="peso" class="form-label">Peso</label>
+            <input type="text" id="peso" class="form-control">
+            </div>
+
+            <div class="mb-2">
+            <label for="altura" class="form-label">Altura</label>
+            <input type="text" id="altura" name="" maxlength="4" onkeypress="aplicar(altura.value)" class="form-control">
+            </div>
+            <button type="button" onclick="calcularImc()" class="btn btn-primary">
+                Calcular
+            </button>
+            <button type="button" onclick="limparCampos()" class="btn btn-outline-primary">
+                Limpar
+            </button>
+            </form>
+            </div>
+        <div id="resultado"></div>
+        
+        <div class="mt-2">
+        <table class="table table-primary table-striped" border="1">
+            <thead class="table-dark">
+                <tr>
+                    <th>IMC</th>
+                    <th>Peso</th>
+                    <th>Grau de obesidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>< 18.5</td>
+                    <td>Abaixo do peso</td>
+                    <td>Nenhum grau de obesidade</td>
+                </tr>
+                <tr>
+                    <td>> = 18.5 a 24.9</td>
+                    <td>Peso normal</td>
+                    <td>Nenhum grau de obesidade</td>
+                </tr>
+                <tr>
+                    <td>> = 25 a 29.9</td>
+                    <td>Sobrepeso</td>
+                    <td>Leve grau de obesidade</td>
+                </tr>
+                <tr>
+                    <td>> = 30 a 34.9</td>
+                    <td>Obesidade grau 1</td>
+                    <td>Moderado grau de obesidade</td>
+                </tr>
+                <tr>
+                    <td>> = 35 a 39.9</td>
+                    <td>Obesidade grau 2</td>
+                    <td>Severo grau de obesidade</td>
+                </tr>
+                <tr>
+                    <td>> = 40</td>
+                    <td>Obesidade grau 3</td>
+                    <td>Mórbido grau de obesidade</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        </div>
+    </div>
+
+
+    <script src='./js/main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
